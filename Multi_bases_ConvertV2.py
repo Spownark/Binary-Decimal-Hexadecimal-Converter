@@ -93,7 +93,7 @@ if __name__ == "__main__":
         elif couple==(3,2):
             res=hexadecimal_to_binary(value)
         else :
-            res="Choose two differents type of base!"
+            res="Choose two different types of base!"
         root2=Toplevel()
         Label(root2,text="Result").pack()
         Label(root2,text=res).pack()
