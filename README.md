@@ -1,7 +1,24 @@
 # Multi bases converter
 This program allows you to convert different type of bases (Binary, Decimal, Hexadecimal).
 
-## How does it work ?
+# Installation
+```
+git clone https://github.com/Spownark/Binary-Decimal-Hexadecimal-Converter.git
+cd ./Binary-Decimal-Hexadecimal-Converter
+```
+# Requirements
+this program doesn't need requirements, You just need to have python install on your device
+
+# How to use
+On linux:
+```
+python3 Multi_bases_ConvertV2.py
+```
+On Windows:
+
+After clone the project ust click on the "Multi_bases_ConvertV2" file and the program will be launch
+
+# How does it work ?
 When you launch the program, You have different types of base:
 - Binary
 - Decimal
