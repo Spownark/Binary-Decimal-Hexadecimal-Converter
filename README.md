@@ -16,7 +16,7 @@ python3 Multi_bases_ConvertV2.py
 ```
 On Windows:
 
-After clone the project ust click on the "Multi_bases_ConvertV2" file and the program will be launch
+After clone the project just click on the "Multi_bases_ConvertV2" file and the program will be launch
 
 # How does it work ?
 When you launch the program, You have different types of base:
