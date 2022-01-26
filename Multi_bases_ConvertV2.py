@@ -11,34 +11,34 @@ if __name__ == "__main__":
     
     #Convert a decimal to a binary
     def decimal_to_binary(string):
-        nb = int(string)
+        number = int(string)
         result = ""
-        while nb != 0 :
-            r = str(nb % 2)
-            result = r + result
-            nb = nb // 2
+        while number != 0 :
+            remains = str(number % 2)
+            result = remains + result
+            number = number // 2
         return result
 
     #Convert a binary to a decimal
     def binary_to_decimal(string):
-        nb = int(string)
-        k = 0
+        number =(string)
+        power_increment = 0
         result = 0
-        while len(nb) > 0:
-            b = int(nb[len(nb)-1:])
-            result += b * math.pow(2, k)
-            k += 1
-            nb = nb[: len(nb)-1]
+        while len(number) > 0:
+            last_bit = int(number[len(number)-1:])
+            result += last_bit * math.pow(2, power_increment)
+            power_increment += 1
+            number = number[: len(number)-1]
         return result
 
 
     #Convert decimal to hexadecimal
     def decimal_to_hexadecimal(string):
-        nb = int(string)
+        number = int(string)
         result = ""
-        while nb > 0:
-            result = hexa_values[str(nb%16)] + result
-            nb = nb //16
+        while number > 0:
+            result = hexa_values[str(number%16)] + result
+            number = number //16
         return result
          
 
@@ -52,8 +52,8 @@ if __name__ == "__main__":
 
     #Convert binary to hexadecimal
     def binary_to_hexadecimal(string):
-        nb = int(string)
-        decimal=int(nb,2)
+        number=(string)
+        decimal=int(number,2)
         result=hex(decimal)
                                                 #if the user enter a value with 0x
         if "0x" in result:
@@ -64,10 +64,10 @@ if __name__ == "__main__":
 
     #Convert hexadecimal to binary
     def hexadecimal_to_binary(string):
-        nb = (string)
-        result=bin(int(nb, 16)).zfill(8)
+        number = (string)
+        result=bin(int(number, 16)).zfill(8)
                                                 #if the user don't use uppercase character
-        nb = nb.upper()
+        number = number.upper()
                                                 #Don't show the result with 0b
         if "0b" in result:
             result=result.replace("0b","")
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     
     #Function for conversion with GUI
     def convert():
-        value=e_value.get()
+        value=entry_value.get()
         x,y=start_base.get(),result_base.get()
         couple=(x,y)
         if couple==(1,2):
@@ -104,27 +104,27 @@ if __name__ == "__main__":
     root=Tk()
     root.title("Multi bases converter")
     Label(root,text="Choose a value\nto convert").pack(side=TOP)
-    e_value=Entry(root)
-    e_value.pack(side=TOP)
+    entry_value=Entry(root)
+    entry_value.pack(side=TOP)
 
-    f_left=Frame(root)
-    f_left.pack(side=LEFT)
-    Label(f_left,text="Start base").pack()
+    frame_left=Frame(root)
+    frame_left.pack(side=LEFT)
+    Label(frame_left,text="Start base").pack()
     start_base=IntVar()
-    Radiobutton(f_left,text="Decimal",variable=start_base,value=1,indicatoron=0,width=15).pack()
-    Radiobutton(f_left,text="Binary",variable=start_base,value=2,indicatoron=0,width=15).pack()
-    Radiobutton(f_left,text="Hexadecimal",variable=start_base,value=3,indicatoron=0,width=15).pack()
+    Radiobutton(frame_left,text="Decimal",variable=start_base,value=1,indicatoron=0,width=15).pack()
+    Radiobutton(frame_left,text="Binary",variable=start_base,value=2,indicatoron=0,width=15).pack()
+    Radiobutton(frame_left,text="Hexadecimal",variable=start_base,value=3,indicatoron=0,width=15).pack()
 
 
-    f_right=Frame(root)
-    f_right.pack(side=RIGHT)
-    Label(f_right,text="Result base").pack()
+    frame_right=Frame(root)
+    frame_right.pack(side=RIGHT)
+    Label(frame_right,text="Result base").pack()
     result_base=IntVar()
-    Radiobutton(f_right,text="Decimal",variable=result_base,value=1,indicatoron=0,width=15).pack()
-    Radiobutton(f_right,text="Binary",variable=result_base,value=2,indicatoron=0,width=15).pack()
-    Radiobutton(f_right,text="Hexadecimal",variable=result_base,value=3,indicatoron=0,width=15).pack()
+    Radiobutton(frame_right,text="Decimal",variable=result_base,value=1,indicatoron=0,width=15).pack()
+    Radiobutton(frame_right,text="Binary",variable=result_base,value=2,indicatoron=0,width=15).pack()
+    Radiobutton(frame_right,text="Hexadecimal",variable=result_base,value=3,indicatoron=0,width=15).pack()
 
-    b_convert=Button(root,text="Convert",command=convert)
-    b_convert.pack(side=BOTTOM)
+    button_convert=Button(root,text="Convert",command=convert)
+    button_convert.pack(side=BOTTOM)
 
     root.mainloop()
